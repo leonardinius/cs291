@@ -18,17 +18,17 @@ function drawGoldCube() {
 
 	var cube;
 	var cubeSizeLength = 100;
-	var goldColor = "#FFDF00";
+	var goldColor = "#FFDFff";
 	var showFrame = true;
 	var wireMaterial = new THREE.MeshBasicMaterial( { color: goldColor, wireframe: showFrame } ) ;
 
 	var cubeGeometry = new THREE.CubeGeometry(cubeSizeLength, cubeSizeLength, cubeSizeLength);
 
 	cube = new THREE.Mesh( cubeGeometry, wireMaterial );
-	cube.position.x = 0;	// centered at origin
-	cube.position.y = 0;	// centered at origin
-	cube.position.z = 0;	// centered at origin
-	scene.add( cube ;
+	cube.position.x = 10;	// centered at origin
+	cube.position.y = -20;	// centered at origin
+	cube.position.z = 30;	// centered at origin
+	scene.add(cube) ;
 
 }
 
@@ -41,9 +41,9 @@ function init() {
 	var canvasRatio = canvasWidth / canvasHeight;
 	// SCENE
 	scene = new THREE.Scene();
-	scene.fog = new THREE.Fog( 0x808080, 2000, 4000 );
+	scene.fog = new THREE.Fog( 0x809090, 1000, 6000 );
 	// LIGHTS
-	scene.add( new THREE.AmbientLight( 0x222222 ) );
+	scene.add( new THREE.AmbientLight( 200000 ) );
 
 	// RENDERER
 
@@ -64,14 +64,14 @@ function init() {
 	cameraControls = new THREE.OrbitAndPanControls(camera, renderer.domElement);
 	cameraControls.target.set(0,0,0);
 
-	/ draw the coordinate grid
+	// draw the coordinate grid
 	Coordinates.drawGrid({size:1000,scale:0.01});
-	Coordinates.drawGrid(size:1000,scale:0.01, orientation:"y"});
+	Coordinates.drawGrid({size:1000,scale:0.01, orientation:"y"});
 	Coordinates.drawGrid({size:1000,scale:0.01, orientation:"z"});
 }
 
-function animate() {
-	requestAnimationFrame(animate);
+function animate2() {
+	requestAnimationFrame(animate2);
 	render();
 }
 
@@ -83,4 +83,4 @@ function render() {
 
 init();
 drawGoldCube();
-animate();
+animate2();
