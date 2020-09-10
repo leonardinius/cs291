@@ -21,6 +21,7 @@ function fillScene() {
 	var red = new THREE.Color(0xff0000);
 	var green = new THREE.Color(0x00ff00);
 	var blue = new THREE.Color(0x0000ff);
+	var black = new THREE.Color(0);
 	geometry.faces[0].vertexColors = [red, green, blue];
 
 	mesh = new THREE.Mesh( geometry, material );
